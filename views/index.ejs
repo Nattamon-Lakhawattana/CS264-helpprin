@@ -75,6 +75,14 @@ text-align: center;
 	cursor: pointer;
 	width: 20%
   }
+  .time{
+    width: 7%;
+	padding: 12px 20px;
+	margin: 8px 0px;
+	display: inline-block;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+  }
   
   /* Add a hover effect for buttons */
   button:hover {
@@ -128,7 +136,7 @@ text-align: center;
 
 
 
-<body>
+<body onload="startTime()"
   
 
   
@@ -137,14 +145,14 @@ text-align: center;
   <div class = "container2">
   <h2>ยินดีต้อนรับเข้าสู่ระบบบริการคำร้องออนไลน์</h2>
   <p>กรุณา login เพื่อเข้าสู่ระบบ</p>
-  <p id = "show"></p>
+  <div class = " time"id="txt"></div>
   
 </div> 
 
 
 
   <div class="fullscreen-block"></div>
-<form action="action_page.ejs" method="post">
+<form action="https://restapi.tu.ac.th/api/v1/auth/Ad/verify" method="post">
   
   <div class="imgcontainer">
     <img src="https://upload.wikimedia.org/wikipedia/commons/3/32/Emblem_of_Thammasat_University.svg" alt="Avatar" class="avatar">
@@ -165,14 +173,39 @@ text-align: center;
 
       </span>
     </label>
-  </div>
+  </div
 
   
     <div class="psw"> <a href="#">Forgot password?</a></div>
   
-<script>
-  var USER = document.getElementById("UserName");
-var PASS = document.getElementById("Password");
+
+  <script>
+function startTime() {
+  var today = new Date();
+  var h = today.getHours();
+  var m = today.getMinutes();
+  var s = today.getSeconds();
+  m = checkTime(m);
+  s = checkTime(s);
+  document.getElementById('txt').innerHTML =
+  h + ":" + m + ":" + s;
+  var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  return i;
+}
+
+
+
+
+
+
+
+  var dt = new Date();
+document.getElementById("datetime").innerHTML = dt.toLocaleString();
+  var UserName = document.getElementById("UserName");
+var Passw = document.getElementById("Password");
 </script>
 
 
@@ -210,9 +243,10 @@ var https = require('https');
     });
   });
   
-  var postData =  "{\n\t\"UserName\":\"{username}\",\n\t\"PassWord\":\"{password}\"\n}";
+  var postData =  "{\n\t\"UserName\":\"6209680856\",\n\t\"PassWord\":\"1149900629300\"\n}";
   
   req.write(postData);
   
-  req.end();</script>
+  req.end();
+</script>
 </html>

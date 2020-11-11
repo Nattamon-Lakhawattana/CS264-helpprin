@@ -13,7 +13,6 @@ app.set('view engine', 'ejs');
 
 app.get('/', function (req, res) {
 
-    res.render('index', {fname: 'YOKO YAMASHIDA',lname: 'Tom TEMM'});
 
     res.render('index', {fname: 'Songsakdi', lName: 'Rongviri'});
 });
