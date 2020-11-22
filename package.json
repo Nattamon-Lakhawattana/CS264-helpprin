@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "description": "NodejsWebApp1",
   "engines": {
-  
     "node": "12.19.0"
   },
   "main": "server.js",
@@ -12,6 +11,8 @@
   },
   "dependencies": {
     "ejs": "^3.1.5",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "html-pdf": "^2.2.0",
+    "pdf-creator-node": "^1.4.1"
   }
 }
