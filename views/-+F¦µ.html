@@ -1,0 +1,217 @@
+<!DOCTYPE html>   
+<html>
+<head> 
+<title> ระบบยื่นคำร้องออนไลน์ </title>
+</head>
+<style>
+    body{
+        font-family: "TH SarabunPSK";
+        font-weight: 700;
+        font-size: xx-large;
+    }
+    form{
+        width: 90%;
+        font-family: "TH SarabunPSK";
+        font-weight: 500;
+        font-size: 45px;
+        border: 3px solid #f1f1f1;
+        line-height: 80px;
+        margin-left: 3%;
+        grid-area: form;
+        background-color:#B4B4B4;
+        height: 50px;
+    }
+    select{
+        font-size: 32px;
+        font-family: "TH SarabunPSK";
+        font-weight: 700;
+    }
+    select:focus{
+        background-color: rgb(222, 234, 238);
+    }
+    input{  
+        box-sizing: border-box;
+        border: 1px solid #B4B4B4;
+        font-family: "TH SarabunPSK"; 
+        font-weight: 700;
+        text-align: center;
+        font-size: 32px;
+        background-color: #EFEFEF;
+        color: #0A7DB7
+    }  
+    input:focus {
+        background-color: rgb(222, 234, 238);
+    }
+    .grid-container {
+        display: grid;
+        width: 100%;
+        height: 100%;
+        grid-template-areas:
+            'menu header header header header header'
+            'menu main main main main main'
+            'menu footer footer footer footer footer';
+        grid-template-rows: 250px 1fr 435px;
+        grid-template-columns: 15px 1fr;
+        background-color:white;
+        grid-gap:0px;
+    }
+    .grid-container > div {
+        padding: 0px 10px;
+    }
+    .head{
+        grid-area: header;
+        background-image:url("https://scontent.fbkk22-2.fna.fbcdn.net/v/t1.0-9/p960x960/125800158_1885630594921026_4986505238814922718_o.jpg?_nc_cat=105&ccb=2&_nc_sid=730e14&_nc_ohc=5tgRHifuW9EAX-h3nAe&_nc_ht=scontent.fbkk22-2.fna&tp=6&oh=70390cdddd370a3cd286871895c1567e&oe=5FE075A8");
+        margin-left: 13%;
+        font-family:"THAMMASAT";
+        color:#8B0000;
+        text-align: left;
+    }
+    .menu{
+        grid-area: menu;
+        text-align: center;
+        background-color:#8B0000;
+        width: 250px;
+        padding-top: 50px;
+    }
+    .footer{
+        grid-area: footer;
+        margin-left: 16%;
+        font-size: xxx-large;
+        line-height: 20px;
+    }
+    .main{
+        grid-area: main;
+        background-color:#8B0000;
+        height: 40px;
+    }
+    button {   
+        background-color: #FFCC33;
+        color: #63666A;
+        font-family: 'THAMMASAT';
+        font-size: 35px;
+        font-weight: 600;
+        line-height: 10px;
+        padding: 30px 20px;
+        margin: 5px 0;
+        border: 2px black;
+        cursor: pointer;
+        width: 100%;
+        border-radius: 6px;
+        text-align: center;   
+    } 
+    button:hover {   
+        opacity: 1;   
+    } 
+    .submit {
+        width: auto;
+        padding: 20px 40px;
+        background-color: #223f74;
+        font-family: 'TH SarabunPSK';
+        font-size:40px;
+        color: white;
+        border-radius: 4px;
+        border: #1f1e1e;
+    }
+</style>
+
+<body>
+    <div class="grid-container">
+        <div class="head">
+            <br>
+            <dd><FONT SIZE = "80">ระบบยื่นคำร้องออนไลน์</FONT><br>
+            ภาควิชาวิทยาการคอมพิวเตอร์ มหาวิทยาลัยธรรมศาสตร์ ศูนย์รังสิต</dd>
+        </div>
+        <div class="main">
+            <br>
+        </div>
+        <div class="menu">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Emblem_of_Thammasat_University.svg/1200px-Emblem_of_Thammasat_University.svg.png" width="250px" height="250px" style="margin-top: 10%;">
+            <button width="220px" height="auto">ถอยกลับ</button>
+            <button width="220px" height="auto">เมนูหลัก</button>
+            <button width="220px" height="auto"><FONT SIZE = "5">ตรวจสอบสถานะ</FONT></button>
+            <button width="220px" height="auto">ชำระเงิน</button>
+        </div>
+        <div class ="footer">
+            <br><p><dd>
+            <FONT COLOR = "#1E4BA1"><h1><i>ระบบยื่นคำร้องนักศึกษา</i></h1></FONT><br>
+            <Font COLOR = "#C3002F">กรุณาเลือกรูปแบบคำร้อง</Font>&nbsp;&nbsp;
+            <select id="รูปแบบคำร้อง"> 
+                <option selected> </option>
+                <option value = "จดทะเบียนล่าช้า"> จดทะเบียนล่าช้า </option>
+                <option value = "จดทะเบียนรายวิชาข้ามโครงการ"> จดทะเบียนรายวิชาข้ามโครงการ </option>
+                <option value = "Drop W"> Drop W </option>
+                <option value = "ลาออก"> ลาออก </option>
+                <option value = "อื่นๆ" selected> อื่นๆ </option>
+            </select>&nbsp;&nbsp;
+            <Font COLOR = "#C3002F">เพื่อกรอกคำร้องออนไลน์</Font>
+            </p></dd>
+
+            <form action ="form.html" id="อื่นๆ">
+                <div class = "form">
+                    <br>
+                    <center> 
+                    <b>คำร้องนักศึกษา<br>
+                    โครงการปริญญาตรี 
+                    <select id="ภาค"> 
+                    <option selected> </option>
+                    <option value = "ภาคปกติ"> ภาคปกติ </option>
+                    <option value = "ภาคพิเศษ"> ภาคพิเศษ </option>
+                    </select>
+                    ภาควิชาวิทยาการคอมพิวเตอร์ <br>
+                    คณะวิทยาศาสตร์และเทคโนโลยี มหาวิทยาลัยธรรมศาสตร์ ศูนย์รังสิต</b>
+                    </center>
+                    <p><dd>
+                    <b>เรื่อง</b> <Input Type="เรื่อง" value ="ยื่นคำร้องจดทะเบียนล่าช้า"><br>
+                    <b>เรียน</b> อาจารย์ที่ปรึกษาและอาจารย์ผู้สอนประจำรายวิชา<br>
+
+                    ข้าพเจ้า&ensp;
+                    <select id="คำนำหน้า"> 
+                        <option value = "นาย"> นาย </option>
+                        <option value = "นางสาว"> นางสาว </option>
+                    </select>&ensp;
+                    <Input Type="text" name="ชื่อ" size="20" required>&nbsp; นามสกุล &nbsp;<Input Type="text" name="นามสกุล" size="20" required>&ensp;เลขทะเบียน &nbsp;<Input Type="text" name="เลขทะเบียน"size="18" required><br>
+                    สาขาวิชา&nbsp;&nbsp;<Input Type="text" name="สาขาวิชา" value="วิทยาการคอมพิวเตอร์"required>&nbsp;&nbsp;ที่อยู่ที่ติดต่อได้เลขที่&nbsp;&nbsp;<Input Type="text" name="เลขที่"size="8"required>&nbsp;
+                    แขวง/ตำบล&nbsp;&nbsp;<Input Type="text" name="แขวง" size="20"><br>เขต/อำเภอ&nbsp;&nbsp;<Input Type="text" name="เขต" size="22">&nbsp;&nbsp;
+                    จังหวัด&nbsp;&nbsp;<Input Type="text" name="จังหวัด"size="22"required> <br>
+                    โทรศัพท์ติดต่อนักศึกษา&nbsp;&nbsp;<Input Type="text" name="โทรศัพท์ติดต่อนักศึกษา"size="22" placeholder="XXX-XXX-XXXX" required>&nbsp;&nbsp;  
+                    โทรศัพท์ติดต่อผู้ปกครอง&nbsp;&nbsp;<Input Type="text" name="โทรศัพท์ติดต่อผู้ปกครอง"size="22" placeholder="XXX-XXX-XXXX" required><br>
+                    อาจารย์ที่ปรึกษา&nbsp;&nbsp;<Input Type="text" name="อาจารย์ที่ปรึกษา" size="24" value="ผศ.ดร.ทรงศักดิ์ รองวิริยะพานิช" required><br>
+        
+                    <b>ประสงค์จะยื่นคำร้องเรื่อง</b><br>
+                    &emsp;<Input type="radio" name="เรื่อง" value="จดทะเบียนล่าช้า" checked><b>&nbsp;จดทะเบียนล่าช้า/เพิ่มล่าช้า</b>&nbsp;&nbsp;
+                    ภาคการศึกษาที่&nbsp;&nbsp;<Input Type="text" name="ภาคการศึกษา" size="10" value="1 / 2563"required>&nbsp; รหัสวิชา &nbsp;<Input Type="text" name="รหัสวิชา" size="16" required><br>
+                    &emsp;&nbsp;&nbsp;&nbsp;ชื่อวิชา&nbsp;&nbsp;<Input Type="text" name="ชื่อวิชา" size="22"required>&nbsp;Section&nbsp;&nbsp;<Input Type="text" name="Section" size="14" required><br>
+                    <b>เหตุผลที่ยื่นคำร้องเนื่องจาก</b> &nbsp;
+                    <select id="เหตุผล" required> 
+                        <option value = "ปัญหาทางด้านการเงิน"> ปัญหาทางด้านการเงิน </option>
+                        <option value = "ศึกษาต่อต่างประเทศ"> ศึกษาต่อต่างประเทศ </option>
+                        <option value = "อุบัติเหตุ"> อุบัติเหตุ (แนบใบรับรองแพทย์) </option>
+                        <option value = "ปัญหาสุขภาพ"> ปัญหาสุขภาพ (แนบใบรับรองแพทย์) </option>
+                        <option value = "กิจธุระอื่นๆ"> กิจธุระอื่นๆ (โปรดระบุ) </option>
+                    </select>
+                    <br>
+                    <b>วันที่ยื่นคำร้อง</b>&nbsp
+                    <input type="text" id="currentDate">
+                    <script>
+                    var today = new Date();
+                    var date = today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
+                    document.getElementById("currentDate").value = date;
+                    </script><br><br>
+                    <b>แนบเอกสาร</b>&nbsp;(ประกอบคำร้อง)&emsp; <input type="file" id="สำเนาบัตรนักศึกษา" name="สำเนาบัตรนักศึกษา">&nbsp;&nbsp;
+                    <FONT COLOR = "#5ed68c">สำเนาบัตรนักศึกษา.pdf</FONT>
+                    <br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+                    <input type="file" id="ใบรับรองแพทย์" name="ใบรับรองแพทย์">&nbsp;&nbsp;
+                    <FONT COLOR = #5ed68c>ใบรับรองแพทย์ (ถ้ามี).pdf</FONT>
+                    <br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+                    <input type="file" id="อื่นๆ" name="อื่นๆ">&nbsp;&nbsp;
+                    <FONT COLOR = #5ed68c>อื่นๆเพิ่มเติม.pdf</FONT>
+        
+                    <center><br><input type="checkbox" name="นโยบายความเป็นส่วนตัว" value="ยอมรับ" required>&nbsp;
+                    <b><FONT COLOR = "#1E4BA1">กรุณากดยืนยัน Terms and Conditions of Use</FONT></b></center>
+                    <br><center><button type="submit" class="submit"><b>บันทึก</b></button></center><br>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
