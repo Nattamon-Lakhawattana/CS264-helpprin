@@ -137,8 +137,8 @@
             <Font COLOR = "#C3002F">กรุณาเลือกรูปแบบคำร้อง</Font>&nbsp;&nbsp;
             <select id="รูปแบบคำร้อง"> 
                 <option selected> </option>
-                <option value = "จดทะเบียนล่าช้า"> จดทะเบียนล่าช้า </option>
-                <option value = "จดทะเบียนรายวิชาข้ามโครงการ" selected> จดทะเบียนรายวิชาข้ามโครงการ </option>
+                <option value = "จดทะเบียนล่าช้า" selected> จดทะเบียนล่าช้า </option>
+                <option value = "จดทะเบียนรายวิชาข้ามโครงการ"> จดทะเบียนรายวิชาข้ามโครงการ </option>
                 <option value = "Drop W"> Drop W </option>
                 <option value = "ลาออก"> ลาออก </option>
                 <option value = "อื่นๆ"> อื่นๆ </option>
@@ -146,7 +146,7 @@
             <Font COLOR = "#C3002F">เพื่อกรอกคำร้องออนไลน์</Font>
             </p></dd>
 
-            <form action ="form.html" id="จดทะเบียนรายวิชาข้ามโครงการ">
+            <form action ="/action_page.php" id="จดทะเบียนล่าช้า">
                 <div class = "form">
                     <br>
                     <center> 
@@ -167,9 +167,9 @@
                     ข้าพเจ้า&ensp;
                     <select id="คำนำหน้า"> 
                         <option value = "นาย"> นาย </option>
-                        <option value = "นางสาว"> นางสาว </option>
+                        <option value = "นางสาว" selected> นางสาว </option>
                     </select>&ensp;
-                    <Input Type="text" name="ชื่อ" size="20" required>&nbsp; นามสกุล &nbsp;<Input Type="text" name="นามสกุล" size="20" required>&ensp;เลขทะเบียน &nbsp;<Input Type="text" name="เลขทะเบียน"size="18" required><br>
+                    <Input Type="text" name="ชื่อ" size="20" value="นาตาชา">&nbsp; นามสกุล &nbsp;<Input Type="text" name="นามสกุล" size="20" value="โรมานอฟ">&ensp;เลขทะเบียน &nbsp;<Input Type="text" name="เลขทะเบียน"size="18" value="6200000000" ><br>
                     สาขาวิชา&nbsp;&nbsp;<Input Type="text" name="สาขาวิชา" value="วิทยาการคอมพิวเตอร์"required>&nbsp;&nbsp;ที่อยู่ที่ติดต่อได้เลขที่&nbsp;&nbsp;<Input Type="text" name="เลขที่"size="8"required>&nbsp;
                     แขวง/ตำบล&nbsp;&nbsp;<Input Type="text" name="แขวง" size="20"><br>เขต/อำเภอ&nbsp;&nbsp;<Input Type="text" name="เขต" size="22">&nbsp;&nbsp;
                     จังหวัด&nbsp;&nbsp;<Input Type="text" name="จังหวัด"size="22"required> <br>

@@ -138,15 +138,15 @@
             <select id="รูปแบบคำร้อง"> 
                 <option selected> </option>
                 <option value = "จดทะเบียนล่าช้า"> จดทะเบียนล่าช้า </option>
-                <option value = "จดทะเบียนรายวิชาข้ามโครงการ"> จดทะเบียนรายวิชาข้ามโครงการ </option>
+                <option value = "จดทะเบียนรายวิชาข้ามโครงการ" selected> จดทะเบียนรายวิชาข้ามโครงการ </option>
                 <option value = "Drop W"> Drop W </option>
-                <option value = "ลาออก" selected> ลาออก </option>
+                <option value = "ลาออก"> ลาออก </option>
                 <option value = "อื่นๆ"> อื่นๆ </option>
             </select>&nbsp;&nbsp;
             <Font COLOR = "#C3002F">เพื่อกรอกคำร้องออนไลน์</Font>
             </p></dd>
 
-            <form action ="form.html" id="ลาออก">
+            <form action ="index.ejs" id="จดทะเบียนรายวิชาข้ามโครงการ">
                 <div class = "form">
                     <br>
                     <center> 
@@ -161,22 +161,22 @@
                     คณะวิทยาศาสตร์และเทคโนโลยี มหาวิทยาลัยธรรมศาสตร์ ศูนย์รังสิต</b>
                     </center>
                     <p><dd>
-                    <b>เรื่อง</b> <Input Type="เรื่อง" value ="ยื่นคำร้องจดทะเบียนล่าช้า"><br>
+                    <b>เรื่อง</b> <Input Type="เรื่อง" value ="จดทะเบียนรายวิชาข้ามโครงการ"><br>
                     <b>เรียน</b> อาจารย์ที่ปรึกษาและอาจารย์ผู้สอนประจำรายวิชา<br>
 
                     ข้าพเจ้า&ensp;
                     <select id="คำนำหน้า"> 
                         <option value = "นาย"> นาย </option>
-                        <option value = "นางสาว"> นางสาว </option>
+                        <option value = "นางสาว" selected> นางสาว </option>
                     </select>&ensp;
-                    <Input Type="text" name="ชื่อ" size="20" required>&nbsp; นามสกุล &nbsp;<Input Type="text" name="นามสกุล" size="20" required>&ensp;เลขทะเบียน &nbsp;<Input Type="text" name="เลขทะเบียน"size="18" required><br>
+                    <Input Type="text" name="ชื่อ" size="20" value="นาตาชา">&nbsp; นามสกุล &nbsp;<Input Type="text" name="นามสกุล" size="20" value="โรมานอฟ">&ensp;เลขทะเบียน &nbsp;<Input Type="text" name="เลขทะเบียน"size="18" value="6200000000"><br>
                     สาขาวิชา&nbsp;&nbsp;<Input Type="text" name="สาขาวิชา" value="วิทยาการคอมพิวเตอร์"required>&nbsp;&nbsp;ที่อยู่ที่ติดต่อได้เลขที่&nbsp;&nbsp;<Input Type="text" name="เลขที่"size="8"required>&nbsp;
                     แขวง/ตำบล&nbsp;&nbsp;<Input Type="text" name="แขวง" size="20"><br>เขต/อำเภอ&nbsp;&nbsp;<Input Type="text" name="เขต" size="22">&nbsp;&nbsp;
                     จังหวัด&nbsp;&nbsp;<Input Type="text" name="จังหวัด"size="22"required> <br>
                     โทรศัพท์ติดต่อนักศึกษา&nbsp;&nbsp;<Input Type="text" name="โทรศัพท์ติดต่อนักศึกษา"size="22" placeholder="XXX-XXX-XXXX" required>&nbsp;&nbsp;  
                     โทรศัพท์ติดต่อผู้ปกครอง&nbsp;&nbsp;<Input Type="text" name="โทรศัพท์ติดต่อผู้ปกครอง"size="22" placeholder="XXX-XXX-XXXX" required><br>
                     อาจารย์ที่ปรึกษา&nbsp;&nbsp;<Input Type="text" name="อาจารย์ที่ปรึกษา" size="24" value="ผศ.ดร.ทรงศักดิ์ รองวิริยะพานิช" required><br>
-    
+        
                     <b>ประสงค์จะยื่นคำร้องเรื่อง</b><br>
                     &emsp;<Input type="radio" name="เรื่อง" value="จดทะเบียนล่าช้า" checked><b>&nbsp;จดทะเบียนล่าช้า/เพิ่มล่าช้า</b>&nbsp;&nbsp;
                     ภาคการศึกษาที่&nbsp;&nbsp;<Input Type="text" name="ภาคการศึกษา" size="10" value="1 / 2563"required>&nbsp; รหัสวิชา &nbsp;<Input Type="text" name="รหัสวิชา" size="16" required><br>
@@ -205,7 +205,7 @@
                     <br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
                     <input type="file" id="อื่นๆ" name="อื่นๆ">&nbsp;&nbsp;
                     <FONT COLOR = #5ed68c>อื่นๆเพิ่มเติม.pdf</FONT>
-    
+        
                     <center><br><input type="checkbox" name="นโยบายความเป็นส่วนตัว" value="ยอมรับ" required>&nbsp;
                     <b><FONT COLOR = "#1E4BA1">กรุณากดยืนยัน Terms and Conditions of Use</FONT></b></center>
                     <br><center><button type="submit" class="submit"><b>บันทึก</b></button></center><br>
