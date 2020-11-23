@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>   
+<html>
+<head> 
+<title> ระบบยื่นคำร้องออนไลน์ </title>
+</head>
+<style>
+    body{
+        font-family: "TH SarabunPSK";
+        font-weight: 700;
+        font-size: xx-large;
+    }
+    select{
+        font-size: 32px;
+        font-family: "TH SarabunPSK";
+        font-weight: 700;
+    }
+    select:focus{
+        background-color: rgb(222, 234, 238);
+    }
+    input{  
+        box-sizing: border-box;
+        border: 1px solid #B4B4B4;
+        font-family: "TH SarabunPSK"; 
+        font-weight: 700;
+        text-align: center;
+        font-size: 32px;
+        background-color: #EFEFEF;
+        color: #0A7DB7
+    }  
+    input:focus {
+        background-color: rgb(222, 234, 238);
+    }
+    .grid-container {
+        display: grid;
+        width: 100%;
+        height: 100%;
+        grid-template-areas:
+            'menu header header header header header'
+            'menu main main main main main'
+            'menu footer footer footer footer footer';
+        grid-template-rows: 250px 1fr 435px;
+        grid-template-columns: 15px 1fr;
+        background-color:white;
+        grid-gap:0px;
+    }
+    .grid-container > div {
+        padding: 0px 10px;
+    }
+    .head{
+        grid-area: header;
+        background-image:url("https://scontent.fbkk22-2.fna.fbcdn.net/v/t1.0-9/p960x960/125800158_1885630594921026_4986505238814922718_o.jpg?_nc_cat=105&ccb=2&_nc_sid=730e14&_nc_ohc=5tgRHifuW9EAX-h3nAe&_nc_ht=scontent.fbkk22-2.fna&tp=6&oh=70390cdddd370a3cd286871895c1567e&oe=5FE075A8");
+        margin-left: 13%;
+        font-family:"THAMMASAT";
+        color:#8B0000;
+        text-align: left;
+    }
+    .menu{
+        grid-area: menu;
+        text-align: center;
+        background-color:#8B0000;
+        width: 250px;
+        padding-top: 50px;
+    }
+    .footer{
+        grid-area: footer;
+        margin-left: 16%;
+        font-size: xxx-large;
+        line-height: 20px;
+    }
+    .main{
+        grid-area: main;
+        background-color:#8B0000;
+        height: 40px;
+    }
+    button {   
+        background-color: #FFCC33;
+        color: #63666A;
+        font-family: 'THAMMASAT';
+        font-size: 35px;
+        font-weight: 600;
+        line-height: 10px;
+        padding: 30px 20px;
+        margin: 5px 0;
+        border: 2px black;
+        cursor: pointer;
+        width: 100%;
+        border-radius: 6px;
+        text-align: center;   
+    } 
+    button:hover {   
+        opacity: 1;   
+    } 
+    .submit {
+        width: auto;
+        padding: 20px 40px;
+        background-color: #223f74;
+        font-family: 'TH SarabunPSK';
+        font-size:40px;
+        color: white;
+        border-radius: 4px;
+        border: #1f1e1e;
+    }
+    
+</style>
+
+<body>
+    <div class="grid-container">
+        <div class="head">
+            <br>
+            <dd><FONT SIZE = "80">ระบบยื่นคำร้องออนไลน์</FONT><br>
+            ภาควิชาวิทยาการคอมพิวเตอร์ มหาวิทยาลัยธรรมศาสตร์ ศูนย์รังสิต</dd>
+        </div>
+        <div class="main">
+            <br>
+        </div>
+        <div class="menu">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Emblem_of_Thammasat_University.svg/1200px-Emblem_of_Thammasat_University.svg.png" width="250px" height="250px" style="margin-top: 10%;">
+            <button width="220px" height="auto">ถอยกลับ</button>
+            <button width="220px" height="auto">เมนูหลัก</button>
+            <button width="220px" height="auto"><FONT SIZE = "5">ตรวจสอบสถานะ</FONT></button>
+            <button width="220px" height="auto">ชำระเงิน</button>
+        </div>
+        <div class ="footer">
+            <br><p><dd>
+            <FONT COLOR = "#1E4BA1"><h1><i>ระบบยื่นคำร้องนักศึกษา</i></h1></FONT><br>
+            <Font COLOR = "#C3002F">กรุณาเลือกรูปแบบคำร้องเพื่อกรอกคำร้องออนไลน์</Font>
+            <br><br>
+            <form name="menuform">
+            <select id="รูปแบบคำร้อง" name="forma" onChange="top.location.href = this.form.forma.options[this.form.forma.selectedIndex].value; return false;"> 
+                <option selected> </option>
+                <option value = "late.html"> จดทะเบียนล่าช้า </option></a>
+                <option value = "another project.html"> จดทะเบียนรายวิชาข้ามโครงการ</option>
+                <option value = "DropW.html"> Drop W </option>
+                <option value = "byebye.html">ลาออก</option>
+                <option value = "etc.html"> อื่นๆ</option>
+            </select></form>
+            </p></dd>
+
+        </div>
+    </div>
+</body>
+</html>
