@@ -1,0 +1,353 @@
+<!DOCTYPE html>   
+<html>
+<head> 
+<title> ระบบยื่นคำร้องออนไลน์ </title>
+</head>
+<style>
+    body{
+        font-family: "TH SarabunPSK", sans-serif;
+        font-weight: 700;
+        font-size: xx-large;
+    }
+    form{
+        width: 90%;
+        font-family: "TH SarabunPSK", sans-serif;
+        font-weight: 500;
+        font-size: 45px;
+        border: 3px solid #f1f1f1;
+        line-height: 80px;
+        margin-left: 3%;
+        grid-area: form;
+        background-color:#B4B4B4;
+        height: 50px;
+    }
+    select{
+        font-size: 32px;
+        font-family: "TH SarabunPSK", sans-serif;
+        font-weight: 700;
+    }
+    select:focus{
+        background-color: rgb(222, 234, 238);
+    }
+    input{  
+        box-sizing: border-box;
+        border: 1px solid #B4B4B4;
+        font-family: "TH SarabunPSK", sans-serif;
+        font-weight: 700;
+        text-align: center;
+        font-size: 32px;
+        background-color: #EFEFEF;
+        color: #0A7DB7
+    }  
+    input:focus {
+        background-color: rgb(222, 234, 238);
+    }
+    .grid-container {
+        display: grid;
+        width: 100%;
+        height: 100%;
+        grid-template-areas:
+            'menu header header header header header'
+            'menu main main main main main'
+            'menu footer footer footer footer footer';
+        grid-template-rows: 250px 1fr 3000px;
+        grid-template-columns: 15px 1fr;
+        background-color:white;
+        grid-gap:0px;
+    }
+    .grid-container > div {
+        padding: 0px 10px;
+    }
+    .head{
+        grid-area: header;
+        background-image:url("https://scontent.fbkk22-2.fna.fbcdn.net/v/t1.0-9/p960x960/125800158_1885630594921026_4986505238814922718_o.jpg?_nc_cat=105&ccb=2&_nc_sid=730e14&_nc_ohc=5tgRHifuW9EAX-h3nAe&_nc_ht=scontent.fbkk22-2.fna&tp=6&oh=70390cdddd370a3cd286871895c1567e&oe=5FE075A8");
+        margin-left: 13%;
+        font-family:"THAMMASAT", sans-serif;
+        color:#C3002F;
+        text-align: left;
+    }
+    .menu{
+        grid-area: menu;
+        text-align: center;
+        background-color:#C3002F;
+        width: 250px;
+        padding-top: 50px;
+    }
+    .footer{
+        grid-area: footer;
+        margin-left: 16%;
+        font-size: xxx-large;
+        line-height: 20px;
+    }
+    .main{
+        grid-area: main;
+        background-color:#C3002F;
+        height: 40px;
+    }
+    button {   
+        background-color: #FFCC33;
+        color:black;
+        font-family: 'TH SarabunPSK', sans-serif;
+        font-size: 35px;
+        font-weight: 600;
+        line-height: 10px;
+        padding: 30px 20px;
+        margin: 5px 0;
+        border: 2px black;
+        cursor: pointer;
+        width: 100%;
+        border-radius: 6px;
+        text-align: center;   
+    } 
+    button:hover {   
+        opacity: 1;   
+    } 
+    .submit {
+        width: auto;
+        padding: 20px 40px;
+        background-color: #223f74;
+        font-family: 'TH SarabunPSK', sans-serif;
+        font-size:40px;
+        color: white;
+        border-radius: 4px;
+        border: #1f1e1e;
+    }
+    .popup .popuptext {
+        visibility: hidden;
+        width: 160px;
+        background-color: #555;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 8px 0;
+        position: absolute;
+        z-index: 1;
+        bottom: 125%;
+        left: 50%;
+        margin-left: -80px;
+    }
+    .popup .popuptext::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: #555 transparent transparent transparent;
+    }
+
+    .popup .show {
+        visibility: visible;
+        -webkit-animation: fadeIn 1s;
+        animation: fadeIn 1s
+    }
+    @-webkit-keyframes fadeIn {
+        from {opacity: 0;}
+        to {opacity: 1;}
+    }
+    @keyframes fadeIn {
+        from {opacity: 0;}
+        to {opacity:1 ;}
+    }
+    .popup .overlay {
+        position:fixed;
+        top:0px;
+        left:0px;
+        width:400vw;
+        height:400vh;
+        background:rgba(0,0,0,0.7);
+        z-index:1;
+        display:none;
+    }
+    .popup .content {
+        position:absolute;
+        top:180%;
+        left:50%;
+        transform:translate(-50%,-50%) scale(0);
+        background:rgb(219, 236, 250);
+        width:1000px;
+        height:1000px;
+        z-index:2;
+        text-align: left;
+        padding:30px;
+        box-sizing:border-box;
+        font-family:"Cordia New",sans-serif;
+    }
+    .popup .close-btn {
+        cursor:pointer;
+        position:absolute;
+        right:20px;
+        top:20px;
+        width:30px;
+        height:30px;
+        background:#222;
+        color:#fff;
+        font-size:25px;
+        font-weight:600;
+        line-height:30px;
+        text-align:center;
+        border-radius:50%;
+    }
+    .popup.active .overlay {
+        display:block;
+    }
+
+    .popup.active .content {
+        transition:all 300ms ease-in-out;
+        transform:translate(-50%,-50%) scale(1);
+    }
+</style>
+
+<body>
+    <div class="grid-container">
+        <div class="head">
+            <br>
+            <dd style="margin-left: 100px; margin-top: 80px;" ><FONT SIZE = "80" >ระบบยื่นคำร้องออนไลน์</FONT><br>
+                ภาควิชาวิทยาการคอมพิวเตอร์ มหาวิทยาลัยธรรมศาสตร์ ศูนย์รังสิต</dd>
+        </div>
+        <div class="main">
+            <br>
+        </div>
+        <div class="menu">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Emblem_of_Thammasat_University.svg/1200px-Emblem_of_Thammasat_University.svg.png" width="250px" height="250px" style="margin-top: 10%;">
+            <a href="index.html"><button width="220px" height="auto" >ถอยกลับ</button></a>
+            <a href="login2.html"><button width="220px" height="auto">เมนูหลัก</button></a>
+            <a href="Checking Status_Before.html"><button width="220px" height="auto">ตรวจสอบสถานะ</button></a>
+            <a href=""><button width="220px" height="auto">ชำระเงิน</button></a>
+        </div>
+        <div class ="footer">
+            <br><p><dd>
+            <FONT COLOR = "#1E4BA1"><h1><i>ระบบยื่นคำร้องนักศึกษา</i></h1></FONT><br>
+            <Font COLOR = "#C3002F">กรุณาเลือกรูปแบบคำร้อง</Font>&nbsp;&nbsp;
+            <select id="รูปแบบคำร้อง" name="forma" onChange="window.location.href=this.value"> 
+                <option value = "etc.html"> อื่นๆ</option>
+                <option value = "late.html"> จดทะเบียนล่าช้า </option>
+                <option value = "another project.html"> จดทะเบียนรายวิชาข้ามโครงการ</option>
+                <option value = "DropW.html"> Drop W </option>
+                <option value = "quit.html">ลาออก</option>
+            </select>&nbsp;&nbsp;
+            <Font COLOR = "#C3002F">เพื่อกรอกคำร้องออนไลน์</Font>
+            </p></dd>
+
+            <form id="อื่นๆ">
+                <div class = "form">
+                    <br>
+                    <center> 
+                    <b>คำร้องนักศึกษา<br>
+                    โครงการปริญญาตรี 
+                    <select id="ภาค"> 
+                    <option selected> </option>
+                    <option value = "ภาคปกติ" selected> ภาคปกติ </option>
+                    <option value = "ภาคพิเศษ"> ภาคพิเศษ </option>
+                    </select>
+                    ภาควิชาวิทยาการคอมพิวเตอร์ <br>
+                    คณะวิทยาศาสตร์และเทคโนโลยี มหาวิทยาลัยธรรมศาสตร์ ศูนย์รังสิต</b>
+                    </center>
+                    <p><dd>
+                    <b>เรื่อง</b> <Input Type="เรื่อง" placeholder="โปรดระบุ" size="30"><br>
+                    <b>เรียน</b> อาจารย์ที่ปรึกษาและอาจารย์ผู้สอนประจำรายวิชา<br>
+
+                    ข้าพเจ้า&ensp;
+                    <select id="คำนำหน้า"> 
+                        <option value = "นาย"> นาย </option>
+                        <option value = "นางสาว"> นางสาว </option>
+                    </select>&ensp;
+                    <Input Type="text" name="ชื่อ" size="20" value="นาตาชา">&nbsp; นามสกุล &nbsp;<Input Type="text" name="นามสกุล" size="20" value="โรมานอฟ">&ensp;เลขทะเบียน &nbsp;<Input Type="text" name="เลขทะเบียน"size="18" value="6200000000000"><br>
+                    สาขาวิชา&nbsp;&nbsp;<Input Type="text" name="สาขาวิชา" value="วิทยาการคอมพิวเตอร์"required>&nbsp;&nbsp;ที่อยู่ที่ติดต่อได้เลขที่&nbsp;&nbsp;<Input Type="text" name="เลขที่"size="8"required>&nbsp;
+                    แขวง/ตำบล&nbsp;&nbsp;<Input Type="text" name="แขวง" size="20"><br>เขต/อำเภอ&nbsp;&nbsp;<Input Type="text" name="เขต" size="22">&nbsp;&nbsp;
+                    จังหวัด&nbsp;&nbsp;<Input Type="text" name="จังหวัด"size="22"required> <br>
+                    โทรศัพท์ติดต่อนักศึกษา&nbsp;&nbsp;<Input Type="text" name="โทรศัพท์ติดต่อนักศึกษา"size="22" placeholder="XXX-XXX-XXXX" required>&nbsp;&nbsp;  
+                    โทรศัพท์ติดต่อผู้ปกครอง&nbsp;&nbsp;<Input Type="text" name="โทรศัพท์ติดต่อผู้ปกครอง"size="22" placeholder="XXX-XXX-XXXX" required><br>
+                    อาจารย์ที่ปรึกษา&nbsp;&nbsp;<Input Type="text" name="อาจารย์ที่ปรึกษา" size="24" value="ผศ.ดร.ทรงศักดิ์ รองวิริยะพานิช" required><br>
+        
+                    <b>ประสงค์จะยื่นคำร้องเรื่อง</b><br>
+                    &emsp;<Input type="radio" name="เรื่อง" value="อื่นๆ" checked><b>&nbsp;อื่นๆ</b>&nbsp;&nbsp;<Input type="text" name="เรื่องอื่นๆ" size="60" placeholder="(โปรดระบุ)"><br>
+            
+                    <b>เหตุผลที่ยื่นคำร้องเนื่องจาก</b> &nbsp;
+                    <select id="เหตุผล" onchange="if(this.value=='กิจธุระ'){ userselect.style.visibility ='visible'}else {userselect.style.visibility='hidden'};" required> 
+                        <option value = "ปัญหาทางด้านการเงิน"> ปัญหาทางด้านการเงิน </option>
+                        <option value = "ศึกษาต่อต่างประเทศ"> ศึกษาต่อต่างประเทศ </option>
+                        <option value = "อุบัติเหตุ"> อุบัติเหตุ (แนบใบรับรองแพทย์) </option>
+                        <option value = "ปัญหาสุขภาพ"> ปัญหาสุขภาพ (แนบใบรับรองแพทย์) </option>
+                        <option value = "กิจธุระ"> กิจธุระอื่นๆ</option>
+                    </select>                    
+                    <input type="textbox" name="กิจธุระ" id="input" style="visibility:hidden;" placeholder="โปรดระบุ" required/>
+
+                    <script>
+                        var userselect = document.getElementById('input');
+                    </script>
+
+                    <br>
+                    <b>วันที่ยื่นคำร้อง</b>&nbsp;
+                    <input type="text" id="currentDate">
+
+                    <script>
+                    var today = new Date();
+                    var date = today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
+                    document.getElementById("currentDate").value = date;
+                    </script><br>
+
+                    <b>แนบเอกสาร</b>&nbsp;(ประกอบคำร้อง)&emsp; <input type="file" id="สำเนาบัตรนักศึกษา" name="สำเนาบัตรนักศึกษา">&nbsp;&nbsp;
+                    <FONT COLOR = #2fa047>สำเนาบัตรนักศึกษา.pdf</FONT>
+                    <br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+                    <input type="file" id="อื่นๆ" name="อื่นๆ">&nbsp;&nbsp;
+                    <FONT COLOR = #2fa047>อื่นๆเพิ่มเติม.pdf</FONT>
+        
+                    <br><center><input type="checkbox" name="นโยบายความเป็นส่วนตัว" value="ยอมรับ" required>&nbsp;
+                    <b><FONT COLOR = "#1E4BA1">กรุณากดยืนยัน Terms and Conditions of Use</FONT></b>
+                    <font color="#223f74", class="popup", onclick="togglePopup()"><i><u>อ่านเพิ่มเติม</u></i></font></center>
+                
+                    <button type="submit" class="popuptext" onclick="return confirmSelect()">บันทึก</button>
+                    <script>
+                        function confirmSelect(){
+                            if(confirm('ยืนยันการบันทึกคำร้อง')){
+                                alert("บันทึกคำร้องสำเร็จ");
+                                location.href = "index.html";         
+                                }    
+                            else{
+                                return false;
+                                }
+                        }
+                    </script>
+                </div>
+            </form>
+            </div>
+            <div class="popup" id="popup-1">
+                <div class="overlay"></div>
+                <div class="content">
+                    <div class="close-btn" onclick="togglePopup()">&times;</div>
+
+                    <h1><center>Terms and Conditions of use</center></h1>
+                    <p>&emsp;&emsp;&emsp;มหาวิทยาลัยธรรมศาสตร์ เห็นความสำคัญ ในการปกป้องข้อมูลส่วนบุคคลของบุคลากร นักศึกษา และอาจารย์
+                    ภายในมหาวิยาลัยเพื่อเป็นให้เป็นไปตาม<a href="http://www.ratchakitcha.soc.go.th/DATA/PDF/2562/A/069/T_0052.PDF">พระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562</a></p>
+
+                    <p><center>***************** สำคัญ *****************</center><p>
+
+                    &emsp;&emsp;&emsp;ในการใช้บริการนี้ ผู้ใช้ต้องตรวจสอบว่าได้ดำเนินการผ่าน ผู้ให้บริการนี้ไม่ ต้องรับผิดชอบต่อความเสียหายใดๆ ที่เกิดจากการใช้บริการจาก แหล่งอื่นที่ไม่ใช่ผู้ให้บริการอย่างเป็นทางการ
+                    ข้อมูลส่วนบุคคลที่มอบให้แก่บริการนี้และข้อมูลส่วนบุคคลที่ รวบรวมใหม่จะถูกนำไปใช้ภายใต้ความรับผิดชอบของผู้ใช้บริการ นี้ 
+                    โปรดตรวจสอบรายละเอียดในข้อกำหนดการใช้บริการและ นโยบายความเป็นส่วนตัวของผู้ให้บริการ
+                    ข้อมูลโปรไฟล์ประกอบด้วย ชื่อ-นามสกุล,วันเกิด ,อีเมลล์ ,เลขประจำตัวบัตรประชาชน หรือ พาสปอร์ต ,หน่วยงาน และองค์กร
+                    โปรดตรวจสอบว่า ชื่อ-นามสกุลของท่าน ไม่มีเนื้อหาที่ละเมิดในสิทธิ์ของผู้ใด เช่น ละเมิดลิขสิทธิ์ ละเมิด ความเป็นส่วนตัว ตามที่ระบุในข้อกำหนดการใช้บริการ มหาวิทยาลัยธรรมศาสตร์</p>
+                    <center><input type="checkbox" name="submitTerms" required>ข้าพเจ้าตกลงและยิมยอมให้บรรดาข้อมูลใด ๆ ของข้าพเจ้าที่ปรากฎในคำนี้
+                    <br/>
+                    <br/>
+                    <button type="submit" name="submit" class="submit" onclick="togglePopup()">ทำต่อ</button>&emsp;&emsp;
+                    <button type="submit" name="unsubmit" class="submit" onclick="togglePopup()">ยกเลิก</button></center> 
+                </div>      
+            </div>
+                <script>
+                    function togglePopup(){
+                        document.getElementById("popup-1").classList.toggle("active");
+                    }
+                    function myFunction() {
+                        var popup = document.getElementById("myPopup");
+                        popup.classList.toggle("show");
+                    }
+                </script>
+            
+                <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+        </div>
+</body>
+</html>

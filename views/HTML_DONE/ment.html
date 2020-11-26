@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>ment</title>
+<style>
+body{font-family: 'TH SarabunPSK', sans-serif ;}
+button {
+  background-color: #FFD13F;
+  color: black;
+  font-family: 'TH SarabunPSK', sans-serif ;
+  font-size:30px;
+  line-height: 15px;
+  padding: 14px 10px;
+  margin: 8px 0;
+  border: none;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 6px;
+}
+button:hover {
+  opacity: 0.8;
+}
+.head{
+    grid-area: header;
+    background-image:url("https://scontent.fbkk22-2.fna.fbcdn.net/v/t1.0-9/p960x960/125800158_1885630594921026_4986505238814922718_o.jpg?_nc_cat=105&ccb=2&_nc_sid=730e14&_nc_ohc=5tgRHifuW9EAX-h3nAe&_nc_ht=scontent.fbkk22-2.fna&tp=6&oh=70390cdddd370a3cd286871895c1567e&oe=5FE075A8");
+    margin-left: 13%;
+}
+.menu{
+    grid-area: menu;
+    text-align: center;
+    background-color:#C3002F;
+    width: 200px;
+    padding-top: 50px;
+}
+.main{
+    grid-area: main;
+    background-color:#C3002F;
+    height: 30px;
+    margin-left: 13.5%;
+    font-family: 'TH SarabunPSK', sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+}
+.footer{
+    grid-area: footer;
+}
+.grid-container {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-areas:
+            'menu header header header header header'
+            'menu main main main main main'
+            'menu footer footer footer footer footer';
+    grid-template-rows: 250px 1fr 435px;
+    grid-template-columns: 15px 1fr;
+    background-color:white;
+    grid-gap:0px;
+}
+.grid-container > div {
+    padding: 0px 10px;
+}
+h1{
+    margin-top: 150px;
+    margin-bottom: 0px;
+    margin-left: 50px;
+    font-size:80px;
+    font-family:  'Thammasat', sans-serif;
+    color:#C3002F;
+    line-height: 0;
+}
+h2{
+    margin-bottom: 0px;
+    margin-left: 50px;
+    font-size:40px;
+    font-family:  'Thammasat', sans-serif;
+    color:#C3002F;
+    line-height: 1;
+}
+.submit {
+    width: 100px;
+    padding: 10px 18px;
+    background-color:#066c9b;
+    font-family: 'TH SarabunPSK', sans-serif;;
+    font-size:20px;
+    text-align: center
+    color: white;
+    border-radius: 4px;
+}
+td.top {
+  background-color: #ade6f0;
+  text-align: center;
+}
+td.bottom {
+  background-color:#ade6f0;
+  padding: 15px;
+}
+</style>
+<script>
+    var y1 = 40;
+    (document.getElementById) ? dom = true : dom = false;
+    
+    function hideIt() {
+      if (dom) {document.getElementById("layer1").style.visibility='hidden';}
+      if (document.layers) {document.layers["layer1"].visibility='hide';} }
+    
+    function showIt() {
+      if (dom) {document.getElementById("layer1").style.visibility='visible';
+      if (document.layers) {document.layers["layer1"].visibility='show';} 
+      
+    
+    function placeIt() {
+      if (dom && !document.all) {document.getElementById("layer1").style.top = window.pageYOffset + (window.innerHeight - (window.innerHeight-y1))}
+      if (document.layers) {document.layers["layer1"].top = window.pageYOffset + (window.innerHeight - (window.innerHeight-y1))}
+      if (document.all) {document.all["layer1"].style.top = document.body.scrollTop + (document.body.clientHeight - (document.body.clientHeight-y1));}
+      window.setTimeout("placeIt()", 10); }
+    
+    window.onload=placeIt;
+    onResize="window.location.href = window.location.href"
+</script>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="head">
+            <h1>ระบบยื่นคำร้องออนไลน์</h1>
+            <h2>ภาควิชาวิทยาการคอมพิวเตอร์ มหาวิทยาลัยธรรมศาสตร์ ศูนย์รังสิต</h2>
+        </div>
+        <div class="main">
+            ดร.อาจารย์วนิดา พฤทธิวิทยา
+        </div>
+        <div class="menu">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Emblem_of_Thammasat_University.svg/1200px-Emblem_of_Thammasat_University.svg.png" width="200px" height="200px" style="margin-top: 10%;">
+            <a href="Index_Advisor.html"><button type="button" style="text-decoration: none" button width="180px" height="auto" ><b>ถอยกลับ</b></button></a>
+            <a href="Index_Advisor.html"><button type="button" style="text-decoration: none" button width="180px" height="auto"><b>เมนูหลัก</b></button></a>
+        </div>
+        <div class="footer">
+            <font face = "TH SarabunPSK" color ="Blue" size = "20 px" style="margin-left: 16%" >
+                <b><i>แสดงความเห็นชอบการยื่นคำร้อง</b></i><br>
+            </font>
+            <font face = "TH SarabunPSK" color ="Black" size = "5 px" style="margin-left: 16%">
+                <b>เลือกสิทธิ์การอนุมัติ <select name="อาจารย์ที่ปรึกษา"><option selected>อาจารย์ที่ปรึกษา</option><option value="อาจารย์ผู้สอน">อาจารย์ผู้สอน</option></select></b><br>
+            </font>
+            <font face = "TH SarabunPSK" color ="Red" size = "5 px" style="margin-left: 16%">
+                <b>เลือกสถานะเพื่อแสดงคำร้องของนักศึกษาตามสถานะ <select name="รออนุมัติ"><option selected>รออนุมัติ</option><option value="อนุมัติ"><a href="mentIndex.html">อนุมัติ</a></option><option value="ไม่อนุมัติ">ไม่อนุมัติ</option></select></b><br>
+            </font>
+            <br>
+            <font face = "TH SarabunPSK" size = 5 px color ="black" >
+            <table class="table" style="margin-left: 16%" width="50%" height="20%">
+                <thead class="thead-light" bgcolor = #4F4F4F>
+                      <tr>
+                        <th scope="col"><font color="white">สถานะ</font></th>
+                        <th scope="col"><font color="white">ลำดับ</font></th>
+                        <th scope="col"><font color="white">รหัสนักศึกษา</font></th>
+                        <th scope="col"><font color="white">ชื่อ-นามสกุล</font></th>
+                        <th scope="col"><font color="white">ว/ด/ป ที่ยื่นคำร้อง</font></th>
+                        <th scope="col" ><font color="white">เอกสารแนบ</font></th>
+                      </tr>
+                    </thead>   
+                    <tbody>
+                      <tr>
+                        <td align="center">รออนุมัติ</td>
+                        <td align="center">1</td>
+                        <td align="center">6200000000</td>
+                        <td align="center">น.ส.นาตาชา โรมานอฟ</td>
+                        <td align="center">12/08/63</td>
+                        <td align="center"><a href="https://sv1.picz.in.th/images/2020/11/22/byXhRn.jpg"><input type = submit value="ไฟล์.pdf"></a></td>
+                      </tr>
+                      <tr>   
+                        <td colspan="2" align="center"><font color="#000080"><u>แสดงความเห็นชอบ</u></font></td>
+                <form ment ="input">
+                        <td colspan="4"align="center"><input type= "text"  size="80" placeholder="กรุณากรอกความคิดเห็น..."> </td>   
+                      </tr>
+                    </tbody> 
+                  </table>
+                  <br>
+                  <font face = "TH SarabunPSK" color ="Black" size = "5 px" style="margin-left: 16%">
+                    <b>นัดหมายนักศึกษาเพื่อแจ้งการเซ็นอนุมัติความเห็นชอบ   <input type = "datetime-local" id="time" name="time"></b><br>
+                </font>
+                <div id="layer1" style="position:fixed ; top:400px; left:600px; width:690px; height:400px; visibility:hidden;">
+                    <table border="0" cellspacing="0" cellpadding="3">
+                     <tr>
+                      <td class="top">
+                    <font face = "TH SarabunPSK" color ="Blue" size = "5 px"><b><u>ยืนยันการบันทึกการอนุมัติคำร้อง</u><br></b></font></a>
+                      </td>
+                     </tr>
+                     <tr>
+                      <td class="bottom">                      
+                      <font face = "TH SarabunPSK" color ="Black" size = "5 px">   
+                        <a href="mentIndex.html" style="text-decoration: none"><input type="submit" value = "Confirm" style="margin-left: 15%"></a>
+                        <a href="javascript:hideIt()" style="text-decoration: none"><input type="submit" value = "Cancel"></a>
+                      </font>                   
+                      </td>
+                     </tr>
+                    </table>
+                    </font>
+                    </div>
+                    <a href="Index_Advisor.html"><button class="submit" type="button" style="margin-left: 16%" onClick="showIt()">บันทึก</button></a>
+                    
+                </form>
+            </font>
+        </div> 
+    </div> 
+</body>
+</html>
